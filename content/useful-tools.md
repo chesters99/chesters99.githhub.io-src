@@ -1,5 +1,5 @@
 Title: Getting Started - Python Environment 
-Date: 2016-05-17
+Date: 2016-10-17
 Category: Getting Started
 Tags: Python, Getting Started 
 Slug: useful-tools

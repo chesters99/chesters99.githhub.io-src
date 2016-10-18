@@ -1,5 +1,5 @@
 Title: Getting Started - Useful Books
-Date: 2016-05-16
+Date: 2016-10-16
 Category: Getting Started
 Tags: Python, Getting Started
 Slug: useful-books 
