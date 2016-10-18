@@ -1,15 +1,42 @@
-Title: Training I found useful
-Category: Data Science
+Title: Getting Started - Useful Training
+Date: 2016-10-18
+Category: Getting Started
 Tags: Python, Data Science, Getting Started
 Slug: useful-training 
 Authors: Graham Chester 
 Summary: Online and in-person training 
 
-####Data Science Training - Beginner
+###Python Online Training
+***Udemy.com - Python For Data Structures, Algorithms, and Interviews - Jose Portilla*** -
+A hugely comprehensive intermediate level course focussing on Python from a getting-a-job-perspective. Just do it. Covers everything from how to prepare a resume, to programming techniques likely to be in job interviews. There are often Udemy discount periods, or discount vouchers available online to reduce the course cost. US$19 for 20+ hours of video - excellent value!
 
-Lorem ipsum dolor sit amet, ***consectetur adipiscing elit***, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+***Youtube Videos*** -
+So many of these, so where to start... I started with videos from old PyCon conferences for a broad range of topics in the Python world. Checkout Raymond Hettinger for some amazing advice.
+<br><br>
 
-####In-person training
+###Django Online Training 
+***Youtube - GoDjango*** -
+A great range of free Django videos. The author has additional paid-for videos on his website.
 
-Lorem ipsum dolor sit amet, ***consectetur adipiscing elit***, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+***Youtube - DjangoCon*** -
+Old DjangoCon videos offer a broad range of interesting topics and tutorials.
+<br><br>
 
+###Data Science Online Training 
+***Coursera.com - Machine Learning (Stanford University) - Andrew Ng***
+A great course - though heavy on the theory. If your linear algebra and calculus arent great then it may be a struggle, but if your maths is up to it, this is the definitive machine learning course. Unfortunately for Pythonistas the exercises are in Matlab. Andrew Ng is a founder of Coursera and is on a mission to provide quality education to all - to that end, the course is free if you dont need a certificate at the end. Good on you Andrew!
+
+
+***Udemy.com - Learning Python for Data Analysis and Visualisation - Jose Portilla*** -
+Another great course by Jose (see above). Takes a very hands-on/practical approach to data analysis. Not overly theorectical. Discount vouchers are often available - google it.
+
+***Udemy.com - Data Science and Machine Learning with Python - Frank Kane*** - 
+Frank gives a comprehensive and practical overview of many machine learning algorithms - a great course. Discount voouchers are often available -google it.
+
+***Youtube - PyData*** -
+Old PyData videos offer a broad range of interesting topics and tutorials.
+<br><br>
+
+###In-person training
+I've only attended Data Science courses with Cambridge Coding Academy in London, UK - really great people who know their stuff.
+<br><br>
