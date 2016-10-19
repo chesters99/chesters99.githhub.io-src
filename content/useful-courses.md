@@ -1,4 +1,4 @@
-Title: Getting Started - Useful Training
+Title: Getting Started - Useful Training Courses
 Date: 2016-10-18
 Category: Getting Started
 Tags: Python, Data Science, Getting Started

@@ -58,9 +58,9 @@ TAG_CLOUD_MAX_ITEMS = 10
 ARCHIVES_SAVE_AS = 'archives.html'
 SITELOGO = 'images/gchester.png'
 #AVATAR = 'images/gchester.png'
-ABOUT_ME = 'Financial Systems Consultant, Python Developer and Data Scientist'
+ABOUT_ME = 'Financial Systems Consultant, Python Developer and aspiring Data Scientist'
 BANNER = 'images/space.jpg'
-BANNER_SUBTITLE = 'Data science and Python'
+BANNER_SUBTITLE = 'Data Science and Python'
 BANNER_ALL_PAGES = True
 
 GITHUB_SHOW_USER_LINK = False
