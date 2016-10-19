@@ -8,7 +8,7 @@ Summary: Useful books for Python and Data Science
 
 Below are a number of Python-related books that I've found useful. No links are included as things move around - so Google is your friend.
 
-###Beginner Level 
+###Beginner 
 
 ***Python 3 Object Oriented Programming - Dusty Philips (Not Free)*** -
 A good starting point for beginners to Python and who may not have much or any object oriented programming experience
@@ -19,9 +19,12 @@ An excellent intro to Python and it's free! Good on you Mark.....
 ***Learn Python the Hard Way - (Sort of Free)*** -
 The book is available as HTML pages on the authors website, but if you want the hardcopy or PDF then you can buy from several places listed on the authors website.
 The author drives you hard to enter and run all the exercises yourself. He's tough but once you've finished you should find the content 'sticks' much more than just reading or tinkering.
+
+***Data Wrangling with Python - Katharine Jarmul -***
+An excellent introduction to getting data from the web, cleaning and analyzing. Covers a lot of ground simply, and with useful 'further reading options'
 <br><br>
 
-###Upper-Beginner Level 
+###Upper-Beginner 
 
 ***Writing Idiomatic Python - Jeff Knupp (Not Free)*** - 
 Once you've got some of the basics then you might as well learn how to do things properly. The author details how you might write code in another language (eg C) and how that approach should be done in a Pythonic manner.
@@ -36,15 +39,15 @@ Excellent book on how to ermmm write better Python. My personal favorite.
 Once you get to the point of wanting to write a 'proper' program, you'll need some sort of development environment (see my other blog post on Python Development Tools. PyCharm is a great choice if you're happy to pay for it, and this is a great book on how to best use what can be a daunting product when first used.
 <br><br>
 
-###Intermediate level
+###Intermediate 
 
 ***Python Cookbook - David Beazely (Not Free)*** -
 An comprehensive reference of algorithms and how to implement them in Python. Perhaps better dipped into when you need to rather than an end-to-end read.
 <br><br>
 
-###Advanced level
-
-Havent got there yet!
+###Intermediate to Advanced 
+***The Elements of Statistical Learning - Trevor Hastie -***
+The bible of machine learning
 <br><br>
 
 ###Web Development Frameworks

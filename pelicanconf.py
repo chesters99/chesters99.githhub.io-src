@@ -47,9 +47,10 @@ EXTRA_PATH_METADATA = {
     'static/robots.txt': {'path': 'robots.txt'},
     'static/favicon.ico': {'path': 'favicon.ico'},
     'static/custom.css': {'path': 'custom.css'},
+    'static/CNAME': {'path': 'CNAME'},
 }
 PLUGIN_PATHS = ['plugins']
-PLUGINS = ['tag_cloud', 'ipynb.markup','tipue_search']
+PLUGINS = ['tag_cloud', 'ipynb.markup','tipue_search','sitemap']
 MARKUP = ('md', 'ipynb')
 TAG_CLOUD_STEPS = 1
 TAG_CLOUD_MAX_ITEMS = 10
@@ -89,3 +90,17 @@ DISPLAY_PAGES_ON_MENU = True
 DEFAULT_CATEGORY = "General"
 DISQUS_SITENAME = 'gchester'
 
+# Configuration for the "sitemap" plugin
+SITEMAP = {
+    'format': 'xml',
+    'priorities': {
+        'articles': 1,
+        'indexes': 0.5,
+        'pages': 0.5,
+    },
+    'changefreqs': {
+        'articles': 'always',
+        'indexes': 'hourly',
+        'pages': 'monthly'
+    }
+}
