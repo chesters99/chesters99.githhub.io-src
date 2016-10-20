@@ -35,6 +35,7 @@ DEFAULT_PAGINATION = 5
 #RELATIVE_URLS = False
 
 # GC custom settings
+MD_EXTENSIONS = ['codehilite', 'extra']
 DIRECT_TEMPLATES = ('index', 'categories', 'authors', 'archives', 'search')
 DEFAULT_DATE = 'fs'
 DELETE_OUTPUT_DIRECTORY = True
@@ -51,7 +52,7 @@ EXTRA_PATH_METADATA = {
 }
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['tag_cloud', 'ipynb.markup','tipue_search','sitemap']
-MARKUP = ('md', 'ipynb')
+MARKUP = ('md', 'rst', 'ipynb')
 TAG_CLOUD_STEPS = 1
 TAG_CLOUD_MAX_ITEMS = 10
 

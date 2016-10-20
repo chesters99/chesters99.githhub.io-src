@@ -10,7 +10,7 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
-SITEURL = 'http://chesters99.github.io'
+SITEURL = 'http://blog.gchester.com'
 RELATIVE_URLS = True 
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
@@ -20,7 +20,4 @@ DELETE_OUTPUT_DIRECTORY = False
 
 # Following items are often useful when publishing
 
-DISQUS_SITENAME = 'gchester'
 GOOGLE_ANALYTICS = 'UA-55102590-2'
-#GOOGLE_ANALYTICS_UNIVERSAL =
-#GOOGLE_ANALYTICS_UNIVERSAL_PROPERTY =
