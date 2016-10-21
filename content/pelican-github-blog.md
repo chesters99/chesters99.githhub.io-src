@@ -1,7 +1,7 @@
 Title: Setting up a GitHub Pages blog with Pelican
 Date: 2016-10-19
 Category: Getting Started
-Tags: Python, GitHub
+Tags: Python, Pelican
 Slug: pelican-github-blog 
 Authors: Graham Chester 
 Summary: How to setup a blog on GitHub with Pelican
@@ -28,7 +28,6 @@ Setting up a basic blog using GitHub is a relatively simple task, as much of the
 
     $ git clone https://github.com/yourusername.github.io-src ghpages
 
-
 **Add a submodule for the pelican output ie the actual website HTML/CSS**
 
     $ git submodule add https://github.com/yourusername.github.io.git output
@@ -39,50 +38,49 @@ Setting up a basic blog using GitHub is a relatively simple task, as much of the
 
 **Create a basic config/template with answers as follows:**
 
-    $ pelican-quickstart
+```text
+$ pelican-quickstart
 
-    Welcome to pelican-quickstart v3.6.3.
-    This script will help you create a new Pelican-based website.
-    Please answer the following questions so this script can generate the files needed by Pelican.
+Welcome to pelican-quickstart v3.6.3.
+This script will help you create a new Pelican-based website.
+Please answer the following questions so this script can generate the files needed by Pelican.
 
-    Where do you want to create your new web site? [.]
-    What will be the title of this web site? Your Blog's name
-    Who will be the author of this web site? Your Name
-    What will be the default language of this web site? [en]
-    Do you want to specify a URL prefix? e.g., http://example.com   (Y/n) Y
-    What is your URL prefix? (see above example; no trailing slash) http://yourusername.github.io
-    Do you want to enable article pagination? (Y/n) Y
-    How many articles per page do you want? [10] 5
-    What is your time zone? [Europe/Paris] Europe/London
-    Do you want to generate a Fabfile/Makefile to automate generation and publishing? (Y/n) Y
-    Do you want an auto-reload & simpleHTTP script to assist with theme and site development? (Y/n) Y
-    Do you want to upload your website using FTP? (y/N) n
-    Do you want to upload your website using SSH? (y/N) n
-    Do you want to upload your website using Dropbox? (y/N) n
-    Do you want to upload your website using S3? (y/N) n
-    Do you want to upload your website using Rackspace Cloud Files? (y/N) n
-    Do you want to upload your website using GitHub Pages? (y/N) Y
-    Is this your personal page (username.github.io)? (y/N) Y
-    Done. Your new project is available at xxxxxxxxxxxxx\ghpages
-
+Where do you want to create your new web site? [.]
+What will be the title of this web site? Your Blog's name
+Who will be the author of this web site? Your Name
+What will be the default language of this web site? [en]
+Do you want to specify a URL prefix? e.g., http://example.com   (Y/n) Y
+What is your URL prefix? (see above example; no trailing slash) http://yourusername.github.io
+Do you want to enable article pagination? (Y/n) Y
+How many articles per page do you want? [10] 5
+What is your time zone? [Europe/Paris] Europe/London
+Do you want to generate a Fabfile/Makefile to automate generation and publishing? (Y/n) Y
+Do you want an auto-reload & simpleHTTP script to assist with theme and site development? (Y/n) Y
+Do you want to upload your website using FTP? (y/N) n
+Do you want to upload your website using SSH? (y/N) n
+Do you want to upload your website using Dropbox? (y/N) n
+Do you want to upload your website using S3? (y/N) n
+Do you want to upload your website using Rackspace Cloud Files? (y/N) n
+Do you want to upload your website using GitHub Pages? (y/N) Y
+Is this your personal page (username.github.io)? (y/N) Y
+Done. Your new project is available at xxxxxxxxxxxxx\ghpages
+```
 
 This will create content and output directories, the pelicanconf.py and publishconf.py files and some supporting files. Essentially you put your content in content, then run *make* as described below and pelican writes the html/css in the output directory.
 
 It is helpful to create three subdirectories in the content directory 
-```
-cd content
-mkdir pages static images
-```
+
+    $ cd content
+    $ mkdir pages static images
 
 Your non-blog pages (eg about) go in the pages directory, images in images(doh!), and any content you just want pelican to copy across directory goes in static.
 
 ###Install Themes and plugins
 This is an optional step depending on your requirements. If you want more choice with css themes or additional functionality for generating sitemaps, or search bar, or reading iPython notebooks (and many others) then: 
-```
-cd ghpages
-git clone https://github.com/getpelican/pelican-themes.git themes
-git clone https://github.com/getpelican/pelican-plugins.git plugins
-```
+
+    $ cd ghpages
+    $ git clone https://github.com/getpelican/pelican-themes.git themes
+    $ git clone https://github.com/getpelican/pelican-plugins.git plugins
 
 The example pelicanconf.py below shows how these can be used.
 
@@ -90,8 +88,7 @@ The example pelicanconf.py below shows how these can be used.
 ###Configuration
 While the essential config requires little update, there are many options to control your site behaviour. The config for the dev/test server is in *pelicanconf.py* and this is overridden by the 'production' config in *publishconf.py*. Please see my pelicanconf.py file as a working example. The config is described in some detail in the pelican documentation
 
-```
-$ cat pelicanconf.py
+```python
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
@@ -200,8 +197,7 @@ SITEMAP = {
 The production config is much simpler in publishconf.py. Only the site url, google analytics needed to be set. 
 
 
-```
-$ cat publishconf.py
+```python
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
@@ -231,10 +227,8 @@ GOOGLE_ANALYTICS = 'UA-xxxxxxxx-x'
 
 Simple....
 
-```
-$ make html 
-$ make serve
-```
+    $ make html 
+    $ make serve
 
 In your browser go to http://localhost:8000
 
@@ -243,31 +237,26 @@ As described above, your ghpages directory needs to be pushed to two GitHub repo
 
 Firstly make sure you have a .gitignore file in your ghpages directoryi, something like:
 
-```
-$ cat .gitignore
-output/
-plugins/
-themes/
-__pycache__/
-```
+    $ cat .gitignore
+    output/
+    plugins/
+    themes/
+    __pycache__/
 
 To push all your content/config changes to GitHub:
-```
-$ cd ghpages
-$ git add .
-$ git commit -m "decriptive commit message"
-$ git push -u origin master
-```
+
+    $ cd ghpages
+    $ git add .
+    $ git commit -m "decriptive commit message"
+    $ git push -u origin master
 
 Then to generate and push your website HTML/CSS etc to GitHub to be served
 
-```
-$ make publish
-$ cd output
-$ git add .
-$ git commit -m "update website"
-$ git push -u origin master
-```
+    $ make publish
+    $ cd output
+    $ git add .
+    $ git commit -m "update website"
+    $ git push -u origin master
 
 ###Checkout your new blog
 

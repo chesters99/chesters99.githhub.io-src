@@ -1,7 +1,7 @@
 Title: Setting up a GitHub Pages blog with Pelican - Part 2 
 Date: 2016-10-20
 Category: Getting Started
-Tags: Python, GitHub
+Tags: Python, Pelican
 Slug: pelican-github-blog-finesse
 Authors: Graham Chester 
 Summary: How to setup a blog on GitHub with Pelican - Part 2
@@ -55,7 +55,7 @@ blog.yourdomain.com
 
 Add a line to *EXTRA_PATHS_METADATA* in pelicanconf.py to tell pelican to include the CNAME file without any processing - along with other static content.
 
-```
+```python
 EXTRA_  PATH_METADATA = {
     'static/robots.txt': {'path': 'robots.txt'},
     'static/favicon.ico': {'path': 'favicon.ico'},

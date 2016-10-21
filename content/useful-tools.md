@@ -1,4 +1,4 @@
-Title: Getting Started - Python Environment 
+Title: Getting Started - Python Ecosystem 
 Date: 2016-10-17
 Category: Getting Started
 Tags: Python, Getting Started 

@@ -35,7 +35,7 @@ DEFAULT_PAGINATION = 5
 #RELATIVE_URLS = False
 
 # GC custom settings
-MD_EXTENSIONS = ['codehilite', 'extra']
+MD_EXTENSIONS = ['codehilite(guess_lang=False)', 'extra']
 DIRECT_TEMPLATES = ('index', 'categories', 'authors', 'archives', 'search')
 DEFAULT_DATE = 'fs'
 DELETE_OUTPUT_DIRECTORY = True
