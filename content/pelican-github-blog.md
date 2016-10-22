@@ -126,7 +126,7 @@ DEFAULT_PAGINATION = 5
 #RELATIVE_URLS = False
 
 # GC custom settings
-MD_EXTENSIONS = ['codehilite', 'extra']
+MD_EXTENSIONS = ['codehilite(guess_lang=False, css_class=highlight)', 'extra']
 DIRECT_TEMPLATES = ('index', 'categories', 'authors', 'archives', 'search')
 DEFAULT_DATE = 'fs'
 DELETE_OUTPUT_DIRECTORY = True
@@ -173,6 +173,7 @@ DISPLAY_TAGS_ON_SIDEBAR = True
 DISPLAY_RECENT_POSTS_ON_SIDEBAR = False 
 USE_OPEN_GRAPH = True
 CUSTOM_CSS = 'custom.css'
+PYGMENTS_STYLE ='emacs'
 DISPLAY_CATEGORIES_ON_MENU = True
 DISPLAY_PAGES_ON_MENU = True
 DEFAULT_CATEGORY = "General"

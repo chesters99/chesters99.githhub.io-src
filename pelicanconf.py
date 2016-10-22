@@ -35,7 +35,7 @@ DEFAULT_PAGINATION = 5
 #RELATIVE_URLS = False
 
 # GC custom settings
-MD_EXTENSIONS = ['codehilite(guess_lang=False)', 'extra']
+MD_EXTENSIONS = ['codehilite(guess_lang=False, css_class=highlight)', 'extra']
 DIRECT_TEMPLATES = ('index', 'categories', 'authors', 'archives', 'search')
 DEFAULT_DATE = 'fs'
 DELETE_OUTPUT_DIRECTORY = True
@@ -69,7 +69,7 @@ GITHUB_USER = 'chesters99'
 GITHUB_REPO_COUNT = 3
 GITHUB_SKIP_FORK = True
 
-BOOTSTRAP_THEME = 'flatly' #  'flatly'
+BOOTSTRAP_THEME = 'flatly'
 BOOTSTRAP_NAVBAR_INVERSE = False 
 BOOTSTRAP_FLUID = True  
 DISPLAY_BREADCRUMBS = True
@@ -85,7 +85,7 @@ DISPLAY_TAGS_ON_SIDEBAR = True
 USE_OPEN_GRAPH = True 
 #OPEN_GRAPH_IMAGE = 'images/gchester.png'
 CUSTOM_CSS = 'custom.css'
-#PYGMENTS_STYLE = 'monokai'
+PYGMENTS_STYLE ='emacs'
 DISPLAY_CATEGORIES_ON_MENU = True
 DISPLAY_PAGES_ON_MENU = True
 DEFAULT_CATEGORY = "General"
