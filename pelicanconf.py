@@ -53,6 +53,7 @@ EXTRA_PATH_METADATA = {
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['tag_cloud', 'ipynb.markup','tipue_search','sitemap']
 MARKUP = ('md', 'rst', 'ipynb')
+IPYNB_USE_META_SUMMARY = True
 TAG_CLOUD_STEPS = 1
 TAG_CLOUD_MAX_ITEMS = 10
 
