@@ -1,0 +1,7 @@
+Title: Kaggle Titanic survival competetion
+Slug: kaggle-titanic 
+Date: 2016-11-12
+Category: Data Science
+Tags: iPython, Data Science
+Author: Graham Chester
+Summary: Kaggle Titanic competition - SVM and Random Forest entries. The key to good results was creating the right features and then tuning the classifiers, then back to the features and finally a re-tune of the classifiers. Arguably the classifiers are too finely tuned and a 'real' result should be about 1% less than that submitted.....
