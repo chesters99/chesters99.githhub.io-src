@@ -173,8 +173,8 @@ import theano
 ```
 You should get a response similar to:
 
-**Using gpu device 0: GeForce GTX 970 (CNMeM is enabled with initial size: 75.0% of memory, cuDNN not available)**
+`Using gpu device 0: GeForce GTX 970 (CNMeM is enabled with initial size: 75.0% of memory, cuDNN not available)`{: .red}
 
-####If you get this response, you're done. Nice job!
+**And if you get this response, you're done. Nice job!**
 
 
