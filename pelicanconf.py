@@ -35,7 +35,20 @@ DEFAULT_PAGINATION = 5
 #RELATIVE_URLS = False
 
 # GC custom settings
-MD_EXTENSIONS = ['codehilite(guess_lang=False, css_class=highlight)', 'extra']
+MARKDOWN = {
+        'extension_configs': {
+            'markdown.extensions.codehilite': {
+                'css_class': 'highlight',
+                'guess_lang': False,
+                },
+            'markdown.extensions.extra': {},
+            'markdown.extensions.meta': {},
+            },
+            'output_format': 'html5',
+}
+
+
+#MD_EXTENSIONS = ['codehilite(guess_lang=False, css_class=highlight)', 'extra']
 DIRECT_TEMPLATES = ('index', 'categories', 'authors', 'archives', 'search')
 DEFAULT_DATE = 'fs'
 DELETE_OUTPUT_DIRECTORY = True

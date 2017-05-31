@@ -1,0 +1,7 @@
+Title: Experimenting with Bayesian Inference via PYMC3
+Slug: pymc3 
+Date: 2017-03-15
+Category: Data Science
+Tags: Data Science
+Author: Graham Chester
+Summary: Experiments with PYMC3, including finding mean and std, linear regression adnd solving the German Tank Problem

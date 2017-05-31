@@ -4,7 +4,7 @@ Blog Source Code
 
 To build and run development code
 ---------------------------------
-1) make html && make server
+1) make html && make serve
 
 2) http://localhost:8000
 
