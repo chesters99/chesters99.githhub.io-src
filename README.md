@@ -1,11 +1,15 @@
 # ghpages
 Blog Source Code
 
+Packages needed
+---------------
+
 !pip install pelican markdown
 
 To build and run development code
 ---------------------------------
 make html && make serve
+
 goto  http://localhost:8000
 
 To push to production
