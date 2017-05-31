@@ -1,13 +1,12 @@
 # ghpages
 Blog Source Code
 
+!pip install pelican markdown
 
 To build and run development code
 ---------------------------------
-1) make html && make serve
-
-2) http://localhost:8000
-
+make html && make serve
+goto  http://localhost:8000
 
 To push to production
 ---------------------
@@ -23,7 +22,7 @@ git push -u origin master
 
 To push content to github source control
 ----------------------------------------
-cd ~/ghpages
+cd ../ghpages
 
 git add .
 
