@@ -4,7 +4,7 @@ Blog Source Code
 Packages needed
 ---------------
 
-!pip install pelican markdown
+pip install pelican markdown
 
 To build and run development code
 ---------------------------------
