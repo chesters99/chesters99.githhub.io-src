@@ -1,5 +1,3 @@
-# '
-
 Title: Setting up a GitHub Pages blog with Pelican
 Date: 2016-10-19
 Category: Getting Started
@@ -26,15 +24,21 @@ Setting up a basic blog using GitHub is a relatively simple task, as much of the
 
 **Clone the repo to your machine - to a *ghpages* directory**
 
-    \$ git clone https://github.com/yourusername.github.io-src ghpages
+```text
+git clone https://github.com/yourusername.github.io-src ghpages
+```
 
 ** Add a submodule for the pelican output ie the actual website HTML/CSS **
 
-    \$ git submodule add https://github.com/yourusername.github.io.git output
+```text
+git submodule add https://github.com/yourusername.github.io.git output
+```
 
 ** Install pelican **
 
-    \$ pip install pelican
+```text
+pip install pelican
+```
 
 **Create a basic config/template with answers as follows:**
 
@@ -70,8 +74,10 @@ This will create content and output directories, the pelicanconf.py and publishc
 
 It is helpful to create three subdirectories in the content directory
 
-    \$ cd content
-    \$ mkdir pages static images
+```text
+cd content
+mkdir pages static images
+```
 
 Your non-blog pages (eg about) go in the pages directory, images in images(doh!), and any content you just want pelican to copy across directory goes in static.
 
@@ -79,9 +85,11 @@ Your non-blog pages (eg about) go in the pages directory, images in images(doh!)
 
 This is an optional step depending on your requirements. If you want more choice with css themes or additional functionality for generating sitemaps, or search bar, or reading iPython notebooks (and many others) then:
 
-    \$ cd ghpages
-    \$ git clone https://github.com/getpelican/pelican-themes.git themes
-    \$ git clone https://github.com/getpelican/pelican-plugins.git plugins
+```text
+cd ghpages
+git clone https://github.com/getpelican/pelican-themes.git themes
+git clone https://github.com/getpelican/pelican-plugins.git plugins
+```
 
 The example pelicanconf.py below shows how these can be used.
 
@@ -228,8 +236,9 @@ GOOGLE_ANALYTICS = 'UA-xxxxxxxx-x'
 
 Simple....
 
-    \$ make html
-    $ make serve
+```text
+make html $$ make serve
+```
 
 In your browser go to <http://localhost:8000>
 
@@ -239,26 +248,32 @@ As described above, your ghpages directory needs to be pushed to two GitHub repo
 
 Firstly make sure you have a .gitignore file in your ghpages directoryi, something like:
 
-    $ cat .gitignore
-    output/
-    plugins/
-    themes/
-    __pycache__/
+```text
+$ cat .gitignore
+output/
+plugins/
+themes/
+__pycache__/
+```
 
 To push all your content/config changes to GitHub:
 
-    \$ cd ghpages
-    $ git add .
-    $ git commit -m "decriptive commit message"
-    $ git push -u origin master
+```text
+cd ghpages
+git add .
+git commit -m "decriptive commit message"
+git push -u origin master
+```
 
 Then to generate and push your website HTML/CSS etc to GitHub to be served
 
-    \$ make publish
-    $ cd output
-    $ git add .
-    $ git commit -m "update website"
-    $ git push -u origin master
+```text
+make publish
+cd output
+git add .
+git commit -m "update website"
+git push -u origin master
+```
 
 ### Checkout your new blog
 
