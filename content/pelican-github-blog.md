@@ -1,40 +1,40 @@
+# '
+
 Title: Setting up a GitHub Pages blog with Pelican
 Date: 2016-10-19
 Category: Getting Started
 Tags: Python, Pelican
-Slug: pelican-github-blog 
-Authors: Graham Chester 
+Slug: pelican-github-blog
+Authors: Graham Chester
 Summary: How to setup a blog on GitHub with Pelican
 
-I wanted to setup a blog website in the simplest way, and leveraging existing/known tools as mush as possible. I like Python (a lot) so after reading some reviews chose Pelican as the website generator. Pelican supports markdown and iPython notebooks amonsgt many other things - which seemed ideal. The folks at GitHub have kindly provided *GitHub Pages* which serves your website from a GitHub repo - nice. [All described here](https://pages.github.com/). 
+I wanted to setup a blog website in the simplest way, and leveraging existing/known tools as mush as possible. I like Python (a lot) so after reading some reviews chose Pelican as the website generator. Pelican supports markdown and iPython notebooks amonsgt many other things - which seemed ideal. The folks at GitHub have kindly provided *GitHub Pages* which serves your website from a GitHub repo - nice. [All described here](https://pages.github.com/).
 
 The code/config for my website is available [here](https://github.com/chesters99/ghpages)
 
+## Basic Blog Setup
 
-##Basic Blog Setup
-Setting up a basic blog using GitHub is a relatively simple task, as much of the setup defaults for you. In the next section I'll cover how to finesse your blog with a custom domain and get it setup on google analytics (amongst other things) 
+Setting up a basic blog using GitHub is a relatively simple task, as much of the setup defaults for you. In the next section I'll cover how to finesse your blog with a custom domain and get it setup on google analytics (amongst other things)
 
-
-###Installation
+### Installation
 
 **Login to GitHub with your userid (or create one), and create two new repositories** as explained [here](https://pages.github.com/)
 
-+ Create a repo for the website (output HTML, CSS) called *yourusername.github.io* 
++ Create a repo for the website (output HTML, CSS) called *yourusername.github.io*
 
 + Create a repo for your content called *ghpages* (or name of your choice)
 
-
 **Clone the repo to your machine - to a *ghpages* directory**
 
-    $ git clone https://github.com/yourusername.github.io-src ghpages
+    \$ git clone https://github.com/yourusername.github.io-src ghpages
 
-**Add a submodule for the pelican output ie the actual website HTML/CSS**
+** Add a submodule for the pelican output ie the actual website HTML/CSS **
 
-    $ git submodule add https://github.com/yourusername.github.io.git output
+    \$ git submodule add https://github.com/yourusername.github.io.git output
 
-**Install pelican**
+** Install pelican **
 
-    $ pip install pelican
+    \$ pip install pelican
 
 **Create a basic config/template with answers as follows:**
 
@@ -68,24 +68,25 @@ Done. Your new project is available at xxxxxxxxxxxxx\ghpages
 
 This will create content and output directories, the pelicanconf.py and publishconf.py files and some supporting files. Essentially you put your content in content, then run *make* as described below and pelican writes the html/css in the output directory.
 
-It is helpful to create three subdirectories in the content directory 
+It is helpful to create three subdirectories in the content directory
 
-    $ cd content
-    $ mkdir pages static images
+    \$ cd content
+    \$ mkdir pages static images
 
 Your non-blog pages (eg about) go in the pages directory, images in images(doh!), and any content you just want pelican to copy across directory goes in static.
 
-###Install Themes and plugins
-This is an optional step depending on your requirements. If you want more choice with css themes or additional functionality for generating sitemaps, or search bar, or reading iPython notebooks (and many others) then: 
+### Install Themes and plugins
 
-    $ cd ghpages
-    $ git clone https://github.com/getpelican/pelican-themes.git themes
-    $ git clone https://github.com/getpelican/pelican-plugins.git plugins
+This is an optional step depending on your requirements. If you want more choice with css themes or additional functionality for generating sitemaps, or search bar, or reading iPython notebooks (and many others) then:
+
+    \$ cd ghpages
+    \$ git clone https://github.com/getpelican/pelican-themes.git themes
+    \$ git clone https://github.com/getpelican/pelican-plugins.git plugins
 
 The example pelicanconf.py below shows how these can be used.
 
+### Configuration
 
-###Configuration
 While the essential config requires little update, there are many options to control your site behaviour. The config for the dev/test server is in *pelicanconf.py* and this is overridden by the 'production' config in *publishconf.py*. Please see my pelicanconf.py file as a working example. The config is described in some detail in the pelican documentation
 
 ```python
@@ -96,7 +97,7 @@ from __future__ import unicode_literals
 AUTHOR = 'Graham Chester'
 SITENAME = 'GCHESTER.COM'
 SITEURL = 'http://localhost:8000'
-THEME = 'themes/pelican-bootstrap3' 
+THEME = 'themes/pelican-bootstrap3'
 
 PATH = 'content'
 TIMEZONE = 'Europe/London'
@@ -170,7 +171,7 @@ SHOW_DATE_MODIFIED = True
 SHOW_ARTICLE_CATEGORY = True
 
 DISPLAY_TAGS_ON_SIDEBAR = True
-DISPLAY_RECENT_POSTS_ON_SIDEBAR = False 
+DISPLAY_RECENT_POSTS_ON_SIDEBAR = False
 USE_OPEN_GRAPH = True
 CUSTOM_CSS = 'custom.css'
 PYGMENTS_STYLE ='emacs'
@@ -195,8 +196,7 @@ SITEMAP = {
 }
 ```
 
-The production config is much simpler in publishconf.py. Only the site url, google analytics needed to be set. 
-
+The production config is much simpler in publishconf.py. Only the site url, google analytics needed to be set.
 
 ```python
 #!/usr/bin/env python
@@ -224,16 +224,17 @@ DELETE_OUTPUT_DIRECTORY = False
 GOOGLE_ANALYTICS = 'UA-xxxxxxxx-x'
 ```
 
-###Local Testing
+### Local Testing
 
 Simple....
 
-    $ make html 
+    \$ make html
     $ make serve
 
-In your browser go to http://localhost:8000
+In your browser go to <http://localhost:8000>
 
-###Deployment to GitHub Pages
+### Deployment to GitHub Pages
+
 As described above, your ghpages directory needs to be pushed to two GitHub repos. One for your config, articles, pages, themes, plugins etc. And another for the pelican-generated website files.
 
 Firstly make sure you have a .gitignore file in your ghpages directoryi, something like:
@@ -246,23 +247,21 @@ Firstly make sure you have a .gitignore file in your ghpages directoryi, somethi
 
 To push all your content/config changes to GitHub:
 
-    $ cd ghpages
+    \$ cd ghpages
     $ git add .
     $ git commit -m "decriptive commit message"
     $ git push -u origin master
 
 Then to generate and push your website HTML/CSS etc to GitHub to be served
 
-    $ make publish
+    \$ make publish
     $ cd output
     $ git add .
     $ git commit -m "update website"
     $ git push -u origin master
 
-###Checkout your new blog
+### Checkout your new blog
 
-In your browser goto http://yourusername.github.io and revel in the glory of your new blog!
+In your browser goto <http://yourusername.github.io> and revel in the glory of your new blog!
 
 In the second article I'll cover some ways to make your blog a little more professsional
-
-
