@@ -176,5 +176,3 @@ You should get a response similar to:
 `Using gpu device 0: GeForce GTX 970 (CNMeM is enabled with initial size: 75.0% of memory, cuDNN not available)`{: .red}
 
 **And if you get this response, you're done. Nice job!**
-
-
