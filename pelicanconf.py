@@ -109,7 +109,7 @@ DEFAULT_CATEGORY = "General"
 DISQUS_SITENAME = 'gchester'
 
 # Configuration for the "sitemap" plugin
-SITEMAP = {
+SITEMAP22 = {
     'format': 'xml',
     'priorities': {
         'articles': 1,
@@ -122,3 +122,4 @@ SITEMAP = {
         'pages': 'monthly'
     }
 }
+
