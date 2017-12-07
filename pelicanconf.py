@@ -76,7 +76,7 @@ TAG_CLOUD_MAX_ITEMS = 10
 ARCHIVES_SAVE_AS = 'archives.html'
 SITELOGO = 'images/gchester.png'
 #AVATAR = 'images/gchester.png'
-ABOUT_ME = 'Financial Systems Consultant, Python Developer and aspiring Data Scientist'
+ABOUT_ME = 'Data Science Guy, Python Developer, and ex-Financial Systems Consultant'
 BANNER = 'images/space.jpg'
 BANNER_SUBTITLE = 'Data Science and Python'
 BANNER_ALL_PAGES = True
@@ -109,7 +109,7 @@ DEFAULT_CATEGORY = "General"
 DISQUS_SITENAME = 'gchester'
 
 # Configuration for the "sitemap" plugin
-SITEMAP22 = {
+SITEMAP = {
     'format': 'xml',
     'priorities': {
         'articles': 1,
