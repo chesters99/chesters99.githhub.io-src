@@ -26,7 +26,7 @@ git push -u origin master
 
 ## To push content to github source control
 
-cd ../ghpages
+cd .. # into ghpages
 
 git add .
 
