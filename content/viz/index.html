@@ -1,1 +1,221 @@
-/Users/graham/Documents/UIUC/2_CS498_Data_Visualisation/Week11-Final-Project/index.html
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+    <head>
+        <script src="d3/d3.min.js"></script>
+        <script src="d3/d3-scale-chromatic.min.js"></script>
+        <script src="d3/topojson.min.js"></script>
+        <script src="ushealth.js"></script>
+    </head>
+</html>
+
+<style>
+    .feature {
+        fill: #A6ACAF;
+        cursor: pointer;
+    }
+    .feature.active {
+        fill: #B6BCBF;
+    }
+    div.tooltip {
+        color: black;
+        background: lightgrey;
+        position: absolute;
+        text-align: left;
+        padding: 5px; 
+        font: 12px sans-serif;
+        border-radius: 4px;
+        pointer-events: none;
+        max-width: 155px;
+    }
+    tr:nth-child(n + 16) {
+        display: none;
+    }
+    tr:nth-of-type(odd) { /* table zebra striping */
+		background: #DFEEF8; 
+	}
+	td, th { 
+		padding: 4px; 
+        min-width: 90px;
+	}
+	th.des:after { /* sort asc/desc symbols on table columns */ 
+      content: "\21E9";
+    }
+    th.aes:after {
+      content: "\21E7";
+    }
+</style>
+
+ <body style="width:960px; font: 12px sans-serif; background-color: #E5E7E9; margin: 0px;"> 
+
+    <!-- Page Heading -->
+    <div style="width:900px; text-align:center; background-color:#1F618D; margin: 0px 0px 0px 10px; color: white; 
+                border-radius: 3px 3px 3px 3px; padding:20px;">
+        <h1 style="margin: 0px 0px 0px 0px; ">United States City Health and Life Expectancy</h1>
+        <!-- <h2 style="margin: 5px 0px 0px 0px;">Interactive Slideshow</h2> -->
+    </div>
+    
+    <!-- City Navigator Zone -->
+    <div>
+        <div id="navigator" style="float: left; width: 930px; margin: 10px 20px 0px 15px; background-color:#FBFCFC; 
+                             border: 1px #D0D3D4 solid; border-radius: 3px;" >
+            <div id="buttons" style="background-color:#D5DBDB; text-align:center; padding:2px 0px 2px 0px;">
+                <input id="button0" type="button" class="button" value="About" 
+                    style="font-size:12px; font-weight: bold; border-style: solid;" 
+                    text="<b>This visualization provides the ability to analyze Health and Life Expectancy across 500 cities in the United
+                    States. It uses an Interactive Slideshow approach to guide the user through each scene of the analysis, while encouraging
+                    exploration at each scene. </b><br><br>
+
+                    <b>Scene Functionality</b><br>
+                    1) The Overall Health Map provides an overview of the relative overall health of each of 500 cities across the USA. Circle 
+                    size is used to indicate population, and a red though white to blue color spectum indicates overall health. A state zoom
+                    function enables a clearer view of cities within the more crowded states. The Health Measures bar chart, below the map, shows
+                    various health and life expectancy measures for the clicked city, and defaults to show the national average. To allow easy visual 
+                    comparison to this national average, a black line is shown across all bars when a city is selected.<br>
+
+                    2) The Life Expectancy Map shows the variation in average life expectancy in cities across the United States, and operates
+                    in essentially the same manner as the Overall Health Map described above.<br>
+
+                    3) The Life Expectancy Wealth Gap Map shows the gap in life expectancy between the wealthy (top income quartile), and
+                    and the poor (bottom income quartile), and operates in essentially the same manner at the Overall Health Map described 
+                    above.<br>
+
+                    4) The Life Expectancy vs Overall Health scatterplot shows four data points of Overall Health and Life Expectancy per
+                    city, one for each income quartile, and is activated by mouse hover. It allows exploration of gaps in life expectancy between
+                    income groups, and promotes exploration of extreme cities. Clicking a city updates the Health Measures bar chart.<br>
+
+                    5) The Top Cities table allows exploration by highest and lowest of various measurements by column sorting. Clicking
+                    a city name updates the Health Measures bar chart.<br><br>
+
+                    <b>Hybrid Structure: </b> This visualization follows the Interactive Slideshow hybrid structure, consisting of five scenes
+                    that are somewhat more Reader Driven than Author Driven. The structure guides the user though the available scenes and 
+                    encourages interactive data exploration at each scene. The scenes are designed to provide a variety of ways to explore
+                    different aspects of the available data.<br><br>
+                    
+                    <b>Scenes: </b>A common template structure is used across each scene with a overview/selection area (containing map, 
+                    scatterplot or table) above a detailed bar chart showing national or city specific Health Measures. The three map-based scenes 
+                    are essentially identical in look and feel and only differ in the data they display. All scenes are designed to provide both
+                    an overview and a way of selecting cities to see in more detail either with mouse hover for a tooltip, or a mouse click to 
+                    update the Health Measures bar chart. The scatterplot scene offers a different perspective on the data where trends, gaps in 
+                    life expectancy and extreme values can be easily observed. The Top Cities table offers a highest/lowest approach to city 
+                    navigation. Transitions between scenes keep the user oriented by firstly tab buttons remaining fixed in place with the current
+                    scene highlighted, and secondly the alignment of the two main screen areas is kept constant. Transitions are also used for 
+                    map drill-down to a specific state (using D3 transitions), and showing parts of bordering states are used to keep 
+                    the user oriented. Messaging is used on each scene to prompt the type of questions that the scene can be used to answer, 
+                    and to provide additional information via tooltips.<br><br>
+
+                    <b>Annotations: </b>On each scene a bolded initial question or two are used to inform the user of some of the available
+                    functionality on that scene. The annotations on the three map scenes are partly static (highlighting the best and worst cities,
+                    and pulsing the circle for Champaign, IL.), but in order to minimise clutter, they are mostly dynamic (i.e. tooltips). The 
+                    tooltips follow a common template across all maps. The tooltips appear on mouse hover and clear when the mouse is moved away. The 
+                    annotation on the scatterplot is to pulse Champaign, IL., and a dynamic annotation highlights the 4 data points for a hovered 
+                    city. The annotation for the Top Cities table shows an up or down arrow on a column that is selected for sorting.<br><br>
+
+                    <b>Parameters: </b>The key parameters are firstly which chart to show for each tab (and also tracks the current
+                    state i.e. tab), secondly on each scene a city parameter can be set by mouse click which drives the health measures bar
+                    chart, thirdly a state parameter can be set on the three map scenes for zoom/drilldown, and fourthly in the Top Cities scene
+                    a column sort parameter is set by mouse click on a particular table column.<br><br>
+                    
+                    <b>Triggers: </b>The key trigger is a mouse click to select the scene, and this is highlighted in a set of tabs which have 
+                    arrows to indicate the recommended sequence of the scenes. There are four triggers on the map screens,
+                    one by mouse click selects a state to zoom in, one by mouse click selects a city to display the health measures bar chart,
+                    one by mouse hover on a city shows a summary tooltip about that city, and one by mouse hover over a bar chart bar which shows
+                    more details about that bar. There are three triggers for the scatterplot screen, one by mouse over to highlight the four data
+                    points for that city, one by mouse click to select the city for the health measures bar chart, and one by mouse hover over a 
+                    bar chart bar which shows more details about that bar. There are two triggers on the Top Cities scene, one by mouse hover to
+                    highlight which table cells have a function, one by mouse click to select a table column for sorting, and one by mouse hover
+                    over a bar chart bar which shows more details about that bar.<br><br>
+
+                    Note: The webpage layout was optimised for Chrome on a Retina MacBook Pro. You may need to zoom in or out in your browser
+                    depending on your device, screen size or browser.<br><br>
+
+                    <b>Data Sources</b><br> 
+                    Data from the following sources was merged into a single file (using a Python Jupyter notebook) for this webpage to display:<br>
+                    [1] Health Data sourced from Centre for Disease Control:&nbsp;
+                        https://chronicdata.cdc.gov/500-Cities/500-Cities-Local-Data-for-Better-Health-2017-relea/6vp6-wxuq<br>
+
+                    [2] Life Expectancy Data sourced from Health Inequality Project (Table 7 Life Expectancy Estimates):&nbsp;
+                        https://healthinequality.org/data/<br>
+
+                    [3] City data sourced from SimpleMaps United States Cities Database:&nbsp;
+                        https://simplemaps.com/data/us-cities <br><br>
+                    
+                    <b>Author: </b>Graham Chester, July-2018, University of Illinois, CS498 Data Visualisation
+                    "/>
+                <span>&nbsp&#9658&nbsp</span>
+                <input id="button1" type="button" class="button" value="Overall Health" 
+                    style="font-size:12px; font-weight: bold; border-style: solid;" 
+                    text="<b>How does your hometown's overall health compare to other cities? What are its problems and also its strengths?</b>
+                    <br><br> This scene provides a geographic overview of overall health across 500 cities, with the best and worst cities
+                    annotated with text and a pulsing circle to annotate Champaign, IL. The Health Score is an aggregate
+                    of 22 indicators of Preventative Measures, Unhealthy Behaviours, and Health Problems as shown in the bar chart below. 
+                    Hover over a state for the name, and over a city to see an annotation (tooltip) of key information, including a ranking.
+                    Clicking on a state zooms in for a clearer view of the cities, and clicking again zooms out. Clicking on a city triggers the
+                    update of the Health Measures bar chart. The bar chart initially shows national averages and these averages are retained and
+                    shown as a black line on city-specific bar charts for easy comparison. Hovering over a bar shows more detail about the bar."/>
+                <span>&nbsp&#9658&nbsp</span>
+                <input id="button2" type="button" class="button" value="Life Expectancy" 
+                    style="font-size:12px; font-weight: bold; border-style: solid;" 
+                    text="<b>How does hometown's life expectancy compare to other cities? Is it higher or lower than comparable cities?</b>
+                    <br><br> This scene provides an geographic overview of life expectancy across 500 cities, and operates very much
+                    the same way as the Overall Health scene but uses life expectancy instead. The longest and shortest life expectancies are
+                    annotated with text and a pulsing circle annotates Champaign, IL. Hover over a state for the name, and over
+                    a city to see an annotation (tooltip) of key information, including the life expectancy ranking. Clicking on a state zooms
+                    in for a clearer view of the cities and clicking again zooms out. Clicking on a city triggers
+                    the update of the Health Measures bar chart. The bar chart initially shows national averages and these averages are retained
+                    and shown as a black line on city-specific bar charts for easy comparison. Hovering over a bar shows more detail about the bar."/>
+                <span>&nbsp&#9658&nbsp</span>
+                <input id="button3" type="button" class="button" value="Life Expectancy Wealth Gap" 
+                    style="font-size:12px; font-weight: bold; border-style: solid;" 
+                    text="<b>Where can you live with little wealth but still live almost as long as the wealthy? Why does Champaign, IL have
+                    such a large gap?</b>
+                    <br><br>This scene provides an geographic overview of the life expectancy gap between the wealthy (top income quartile)
+                    and the poor (bottom income quartile), and operates very much the same way as the Overall Health scene but using 
+                    life expectancy gap instead. The largest and smallest life expectancy gaps are annotated with text and a pulsing circle 
+                    annotates Champaign, IL. Hover over a state for the name, and over a city to see an annotation (tooltip)
+                    of key information, including a ranking. Clicking on a state zooms in for a clearer view of the cities and clicking again zooms
+                    out. Clicking on a city triggers the update of the Health Measures bar chart. The bar chart initially shows national
+                    averages and these averages are retained and shown as a black line on city-specific bar charts for easy comparison."/>
+                <span>&nbsp&#9658&nbsp</span>
+                <input id="button4" type="button" class="button" value="Life Expectancy vs Overall Health" 
+                    style="font-size:12px;  font-weight: bold; border-style: solid;" 
+                    text="<b>Which cities have both good overall health and high life expectancy? Which ones are the opposite?</b>
+                    <br><br>This scene provides a scatterplot of Overall Health versus Life Expectancy. It has 4 data points for each city,
+                    one for each income quartile. A pulsing circle annotates Champaign, IL. Hovering over a data point highlights
+                    the four data points for that city. This allows the best and worst cities to be easily identified and explored. Clicking on a 
+                    city triggers the update of the Health Measures bar chart. The bar chart initially shows national averages and these averages 
+                    are retained and shown as a black line on city-specific bar charts for easy comparison. Hovering over a bar shows more 
+                    detail about the bar."/>
+                <span>&nbsp&#9658&nbsp</span>
+                <input id="button5" type="button" class="button" value="Top Cities" 
+                    style="font-size:12px; font-weight: bold; border-style: solid;" 
+                    text="<b>Which cities have the best/worst overall health, life expectancy, life expectancy wealth gap? Are 
+                    larger cities better or worse than smaller cities?</b>
+                    <br><br>This scene provides a table of cities that can be sorted by each column to identify the best and worst cities for
+                    each measure. Clicking on the column heading sorts the table by that column in ascending order, and clicking again sorts
+                    it in descending order. When a column is clicked for sorting, an up or down arrow annotates that column. Clicking on a name 
+                    in the city column triggers the update of the Health Measures bar chart. The bar chart initially shows national averages and 
+                    these averages are retained and shown as a black line on city-specific bar charts for easy comparison. Hovering over a bar 
+                    shows more detail about the bar.<br>"/>
+            </div>
+            <div id="heading" width="960" style="background-color:#FBFCFC;; margin: 0px -1px 0px 0px; border-right: 1px #D0D3D4 solid; 
+                border-radius: 3px; color: black; font-weight: normal; padding:6px; font-size:17px;">
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Bar chart Zone -->
+    <div>
+        <svg width="960" height="25">
+            <rect x="350"  y="0" width="300" height="5" style="fill:#D0D0D0; margin:0px;"/>
+            <polygon points="330,5 670,5 500,24" style="fill:#D0D0D0;" class="triangle" />
+        </svg>
+        <div style="clear: both; margin: -4px 13px 0px 15px; border: 1px #D0D3D4 solid; border-radius: 3px; 
+                    background-color:#FBFCFC; fill: #FBFCFC;">
+            <svg id="barchart" width="930" height="410"></svg>
+        </div>
+    </div>
+
+</body>
+<script>
