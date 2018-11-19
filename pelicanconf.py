@@ -59,14 +59,14 @@ OUTPUT_RETENTION = ['.git', '.gitignore']
 TWITTER_USERNAME = 'gchester99'
 #MENUITEMS = [('GitHub','https://github.com/chesters99'),]
 
-STATIC_PATHS = ['static', 'images', 'pdfs', 'viz']
+STATIC_PATHS = ['static', 'images', 'pdfs', 'viz','psl4',]
 EXTRA_PATH_METADATA = {
     'static/robots.txt': {'path': 'robots.txt'},
     'static/favicon.ico': {'path': 'favicon.ico'},
     'static/custom.css': {'path': 'custom.css'},
     'static/CNAME': {'path': 'CNAME'},
 }
-ARTICLE_EXCLUDES=['viz',]
+ARTICLE_EXCLUDES=['viz','psl4',]
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['tag_cloud', 'ipynb.markup', 'tipue_search', 'sitemap']
 MARKUP = ('md', 'rst', 'ipynb')
