@@ -18,7 +18,7 @@
     <div><button>Reset Zoom/Drag</button></div>
 	<script type="text/javascript">
         d3.queue()
-            .defer(d3.csv, "vocab.csv")
+            .defer(d3.csv, "word_weights.csv")
             .await(ready);
 
         function ready(error, vocab) {
