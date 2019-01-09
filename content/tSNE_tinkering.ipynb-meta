@@ -2,7 +2,6 @@ Title: Tinkering with tSNE - Visualising multidimensional data
 Slug: tsne-tinkering
 Date: 2017-12-01
 Category: Data Science
-Tags: iPython, Data Science
+Tags: Jupyter, Data Science
 Author: Graham Chester
-Summary: Python Jupyter notebook - brief how to use tSNE for visualisation
-
+Summary: How to use tSNE for visualisation of high-dimensional data (Jupyter notebook)

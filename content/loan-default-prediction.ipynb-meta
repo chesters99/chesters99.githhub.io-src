@@ -1,0 +1,7 @@
+Title: Loan Default Prediction using Scikit-Learn and XGBoost
+Slug: loan-default-prediction
+Date: 2018-11-15
+Category: Data Science
+Tags: Jupyter, Data Science, UIUC
+Author: Graham Chester
+Summary: This Jupyter notebook performs various data transformations, and applies various machine learning classifiers from scikit-learn (and XGBoost) to the a loans dataset as used in a Kaggle competition. It also uses scikit-opt Bayesian optimisation to find the best hyperparameters.

@@ -34,7 +34,7 @@ SOCIAL = (('Facebook', 'http://facebook.com/graham.chester'),
           ('StackOverflow', 'http://stackoverflow.com/users/3972759/graham-c?tab=profile'),
          )
 
-DEFAULT_PAGINATION = 5
+DEFAULT_PAGINATION = None
 #RELATIVE_URLS = False
 
 # GC custom settings
@@ -71,6 +71,7 @@ PLUGIN_PATHS = ['plugins']
 PLUGINS = ['tag_cloud', 'ipynb.markup', 'tipue_search', 'sitemap']
 MARKUP = ('md', 'rst', 'ipynb')
 IPYNB_USE_META_SUMMARY = True
+SUMMARY_MAX_LENGTH=200
 TAG_CLOUD_STEPS = 1
 TAG_CLOUD_MAX_ITEMS = 10
 
@@ -82,7 +83,7 @@ BANNER = 'images/space.jpg'
 BANNER_SUBTITLE = 'Data Science and Python'
 BANNER_ALL_PAGES = True
 
-GITHUB_SHOW_USER_LINK = False
+GITHUB_SHOW_USER_LINK = True
 GITHUB_USER = 'chesters99'
 GITHUB_REPO_COUNT = 3
 GITHUB_SKIP_FORK = True
@@ -99,7 +100,7 @@ SHOW_DATE_MODIFIED = True
 SHOW_ARTICLE_CATEGORY = True
 
 DISPLAY_TAGS_ON_SIDEBAR = True
-#DISPLAY_RECENT_POSTS_ON_SIDEBAR = True
+DISPLAY_RECENT_POSTS_ON_SIDEBAR = True
 USE_OPEN_GRAPH = True
 #OPEN_GRAPH_IMAGE = 'images/gchester.png'
 CUSTOM_CSS = 'custom.css'

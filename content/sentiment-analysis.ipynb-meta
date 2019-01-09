@@ -1,0 +1,7 @@
+Title: Sentiment Analysis on IMDB Movie reviews
+Slug: sentiment-analysis
+Date: 2018-12-15
+Category: Data Science
+Tags: Jupyter, Data Science, UIUC
+Author: Graham Chester
+Summary: Finds the best vocabulary of words to determine sentiment of movie reviews (using t-test). Then uses this vocabularly and logisitc regression on TFIDF word vectors to predict sentiment on 3 test datasets. Compare performance using AUC of ROC curve.

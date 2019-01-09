@@ -1,0 +1,7 @@
+Title: House Price Prediction using Scikit-Learn and XGBoost
+Slug: house-price-prediction
+Date: 2018-10-03
+Category: Data Science
+Tags: Jupyter, Data Science, UIUC
+Author: Graham Chester
+Summary: This Jupyter notebook performs various data transformations, and applies various machine learning algorithms from scikit-learn (and XGBoost) to the Ames house price dataset as used in a Kaggle competition.

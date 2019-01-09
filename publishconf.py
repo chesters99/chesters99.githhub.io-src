@@ -18,7 +18,7 @@ SITEURL = 'http://blog.gchester.com'
 RELATIVE_URLS = True
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
-CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
+CATEGORY_FEED_ATOM = None # 'feeds/{slug}.atom.xml'
 
 DELETE_OUTPUT_DIRECTORY = False
 

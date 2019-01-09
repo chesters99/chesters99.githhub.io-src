@@ -1,0 +1,8 @@
+Title: Text Similarity Analysis of Major Religious Books
+Slug: holybooks
+Date: 2018-12-30
+Category: Data Science
+Tags: Jupyter, Data Science, UIUC
+Author: Graham Chester
+Summary: This Jupyter notebook tool was developed to enable the visualisation of similarities and differences of the major texts from many of the worlds largest religions. It also includes non-religious works from approximately similar periods (of translation) as a benchmark. While the tool is focused on religious works, it is general enough to be applied to be used to visualize the comparison of books from any genre.
+

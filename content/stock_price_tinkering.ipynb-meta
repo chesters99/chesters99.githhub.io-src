@@ -2,7 +2,6 @@ Title: Basic Stock price tinkering with iPython
 Slug: stock-prices
 Date: 2016-10-14
 Category: Data Science
-Tags: iPython, Finance, Data Science
+Tags: Jupyter, Finance, Data Science
 Author: Graham Chester
-Summary: iPython stock price tinkering
-
+Summary: Stock price tinkering, very early attempt. Uses quandl to download stock prices from google finance.

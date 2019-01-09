@@ -1,13 +1,12 @@
 Title: Collection of Python Data Science Cheat Sheets
 Date: 2017-05-31
 Category: Data Science
-Tags: Python, Data Science 
-Slug: cheat-sheets 
-Authors: Graham Chester 
-Summary: Useful Python Data Science PDF Cheat Sheets
+Tags: Python, Data Science
+Slug: cheat-sheets
+Authors: Graham Chester
+Summary: Collection of Useful Python Data Science Cheat Sheets - Pandas, Numpy, Matplotlib, Scipy, Scikit-Learn, PySpark, and Keras
 
 Collected from around the web, Datacamp, Pandas github etc, and stored here for preservation as links/versions move around.
-
 
 ### Pandas Cheat Sheet ([pdf](/pdfs/Pandas_Cheat_Sheet.pdf))
 

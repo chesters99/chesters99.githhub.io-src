@@ -1,0 +1,7 @@
+Title: Using Spark and MLLib from Jupyter notebook
+Slug: Spark500Cities
+Date: 2018-04-25
+Category: Data Science
+Tags: Jupyter, Data Science, UIUC
+Author: Graham Chester
+Summary: This notebook uses Spark (via PySpark) to read HDFS files from an AWS S3 bucket, and to join them and perform some basic analysis (correlations). Pandas is used to improve output formattting.
