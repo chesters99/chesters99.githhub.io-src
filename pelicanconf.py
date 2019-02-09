@@ -29,7 +29,7 @@ LINKS = (('KD Nuggets', 'http://kdnuggets.com/'),
 
 # Social widget
 SOCIAL = (('Facebook', 'http://facebook.com/graham.chester'),
-          ('Twitter', 'http://twitter.com/gchester99'),
+#          ('Twitter', 'http://twitter.com/gchester99'),
           ('LinkedIn', 'http://www.linkedin.com/in/graham-chester-051b176'),
           ('StackOverflow', 'http://stackoverflow.com/users/3972759/graham-c?tab=profile'),
          )
